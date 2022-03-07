@@ -1,5 +1,5 @@
 users:
-  veintitres:
+  ubuntu:
     groups:
       - ssh
     password: "*" # http://arlimus.github.io/articles/usepam/
