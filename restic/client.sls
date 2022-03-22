@@ -86,7 +86,7 @@ password-backup:
 #
 # Create the list of files or folders to backup
 #
-{% set files = ['/etc','/root','/var/backups','/var/lib/restic/data'] + salt['pillar.get']('backup:include',[]) %}
+{% set files = ['/etc','/root','/var/backups','/var/lib/restic/data', '/home'] + salt['pillar.get']('backup:include',[]) %}
 /var/lib/restic/files_to_backup:
   file.managed:
     - user: restic

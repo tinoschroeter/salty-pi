@@ -1,0 +1,3 @@
+base:
+  '*':
+    - restic_server

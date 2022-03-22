@@ -22,11 +22,11 @@ restic:
 # Install restic binary from github (the debian packages are quite outdated)
 #
 
-{% set version = 0.12.1 %}
+{% set version = "0.12.1" %}
 
 download-restic:
   file.managed:
-    - name: /var/tmp/restic{{ version }}_linux_{{ grains['osarch'] }}.bz2
+    - name: /var/tmp/restic_{{ version }}_linux_{{ grains['osarch'] }}.bz2
     - source: https://github.com/restic/restic/releases/download/v{{ version }}/restic_{{ version }}_linux_{{ grains['osarch'] }}.bz2
     - skip_verify: true
     - user: root
