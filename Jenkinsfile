@@ -4,7 +4,6 @@ pipeline {
       stage('Linting') {
           steps {
           echo 'linting..'
-          sh("find . -name '*.sls'|xargs salt-lint {}")
           }
       }
       stage('Build Production') {
