@@ -4,7 +4,7 @@ pipeline {
       stage('Linting') {
           steps {
           echo 'linting..'
-          sh("for i in $(find . -name '*.sls'|grep -v 'formula');do salt-lint $i;done")
+          sh("./linter.sh")
           }
       }
       stage('Build Production') {
