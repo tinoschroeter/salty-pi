@@ -31,11 +31,11 @@ download-restic:
     - skip_verify: true
     - user: root
     - group: root
-    - mode: 0755
+    - mode: "0755"
 
 install-restic:
   cmd.run:
-    - name: bunzip2 -k /var/tmp/restic_{{ version }}_linux_{{ grains['osarch'] }}.bz2 -c > restic && chmod 0700 restic 
+    - name: bunzip2 -k /var/tmp/restic_{{ version }}_linux_{{ grains['osarch'] }}.bz2 -c > restic && chmod 0700 restic
     - cwd: /var/lib/restic
     - runas: restic
     - creates:
@@ -47,4 +47,4 @@ install-restic:
   file.directory:
     - user: restic
     - group: restic
-    - mode: 0700
+    - mode: "0700"

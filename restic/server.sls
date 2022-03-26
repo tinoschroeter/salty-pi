@@ -7,4 +7,4 @@ authorized_keys:
     - source: salt://restic/id_ed25519.pub
     - user: restic
     - group: restic
-    - mode: 0600
+    - mode: "0600"

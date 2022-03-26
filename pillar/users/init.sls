@@ -1,11 +1,11 @@
 # Revoke any users with a role of revoked
 {% for user, args in pillar.get('revokedusers', {}).iteritems() %}
-{{user}}:
+{{ user }}:
   user.absent: []
   group.absent: []
 
 {% if args['ssh-keys'] %}
-{{user}}_root_key:
+{{ user }}_root_key:
   ssh_auth.absent:
     - user: root
     - names:
@@ -13,9 +13,9 @@
       - {{ key }}
       {% endfor %}
 
-{{user}}_key:
+{{ user }}_key:
   ssh_auth.absent:
-    - user: {{user}}
+    - user: {{ user }}
     - names:
       {% for key in args['ssh-keys'] %}
       - {{ key }}
@@ -25,7 +25,7 @@
 
 # Add users
 {% for user, args in pillar.get('users', {}).iteritems() %}
-{{user}}:
+{{ user }}:
   group.present:
     - gid: {{ args['uid'] }}
   user.present:
@@ -43,7 +43,7 @@
     {% endif %}
 
 {% if args['ssh-keys'] %}
-{{user}}_root_key:
+{{ user }}_root_key:
   ssh_auth.present:
     - user: root
     - names:
@@ -51,9 +51,9 @@
       - {{ key }}
       {% endfor %}
 
-{{user}}_key:
+{{ user }}_key:
   ssh_auth.present:
-    - user: {{user}}
+    - user: {{ user }}
     - names:
       {% for key in args['ssh-keys'] %}
       - {{ key }}

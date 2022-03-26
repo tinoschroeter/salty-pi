@@ -1,11 +1,11 @@
 backuppcInstall:
   pkg.installed:
     - pkgs:
-        - samba-common 
-        - samba 
-        - smbclient 
-        - libfile-rsyncp-perl 
-        - backuppc
+      - samba-common
+      - samba
+      - smbclient
+      - libfile-rsyncp-perl
+      - backuppc
 
 priv-key:
   file.managed:
@@ -13,7 +13,7 @@ priv-key:
     - source: salt://backuppc/id_ed25519
     - user: backuppc
     - group: backuppc
-    - mode: 0600
+    - mode: "0600"
     - makedirs: true
     - require:
       - pkg: backuppcInstall
@@ -24,7 +24,7 @@ ssh-config:
     - source: salt://backuppc/file/ssh_config
     - user: backuppc
     - group: backuppc
-    - mode: 0400
+    - mode: "0400"
     - makedirs: true
     - require:
       - pkg: backuppcInstall
@@ -35,7 +35,7 @@ backuppc.conf:
     - source: salt://backuppc/file/backuppc.conf
     - user: backuppc
     - group: backuppc
-    - mode: 0660
+    - mode: "0660"
     - require:
       - pkg: backuppcInstall
 
@@ -45,7 +45,7 @@ config.pl:
     - source: salt://backuppc/file/config.pl
     - user: backuppc
     - group: backuppc
-    - mode: 0660
+    - mode: "0660"
     - require:
       - pkg: backuppcInstall
 
@@ -55,7 +55,7 @@ hosts:
     - source: salt://backuppc/hosts
     - user: backuppc
     - group: backuppc
-    - mode: 0660
+    - mode: "0660"
     - require:
       - pkg: backuppcInstall
 
@@ -66,7 +66,7 @@ better_css:
     - source: salt://backuppc/file/BackupPC_bttr.css
     - user: root
     - group: root
-    - mode: 0644
+    - mode: "0644"
     - makedirs: true
     - require:
       - pkg: backuppcInstall

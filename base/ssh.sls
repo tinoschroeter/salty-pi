@@ -3,4 +3,4 @@ authorized_keys:
     - name: /home/ubuntu/.ssh/authorized_keys
     - source: salt://files/ssh_keys/authorized_keys
     - user: ubuntu
-    - mode: 600
+    - mode: "0600"

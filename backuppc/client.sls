@@ -8,5 +8,5 @@ backup_keys:
     - source: salt://backuppc/id_ed25519.pub
     - user: root
     - group: root
-    - mode: 0600
+    - mode: "0600"
     - makedirs: true

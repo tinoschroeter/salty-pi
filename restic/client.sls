@@ -7,13 +7,13 @@ priv-key:
     - source: salt://restic/id_ed25519
     - user: restic
     - group: restic
-    - mode: 0600
+    - mode: "0600"
 
 libcap2-bin:
   pkg.installed: []
 # Allow restic do read alls files without root-rights
 set-cap:
-  cmd.run: 
+  cmd.run:
     - name: setcap cap_dac_read_search=+ep /var/lib/restic/restic
     - unless: getcap /var/lib/restic/restic|grep -q cap_dac_read_search+ep
     - require:
@@ -66,13 +66,13 @@ password-backup:
   file.directory:
     - user: restic
     - group: restic
-    - mode: 0700
+    - mode: "0700"
 
 /var/lib/restic/run.sh:
   file.managed:
     - user: restic
     - group: restic
-    - mode: 0700
+    - mode: "0700"
     - contents: |
         #!/bin/bash
         # Export list of installed packages
@@ -91,7 +91,7 @@ password-backup:
   file.managed:
     - user: restic
     - groupd: restic
-    - mode: 0600
+    - mode: "0600"
     - contents: |
         {% for file in files -%}
         {{ file }}
