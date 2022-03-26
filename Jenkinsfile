@@ -16,7 +16,7 @@ pipeline {
         }
         steps {
             echo 'Run Highstate'
-            sh("./deploy")
+            sh("sudo ./deploy")
           }  
         }
       stage('Build Docs') {
