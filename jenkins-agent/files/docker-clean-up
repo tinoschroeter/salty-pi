@@ -1,0 +1,3 @@
+PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+
+59 23 * * * root /usr/bin/docker system prune -f
