@@ -1,5 +1,4 @@
 base:
   "*":
-    - packages
-    - oh-my-zsh
-    - ssh
+    - base
+    - backuppc.client
