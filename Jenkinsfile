@@ -4,7 +4,6 @@ pipeline {
       stage('Linting') {
           steps {
           echo 'linting..'
-          sh("test")
           }
       }
       stage('Build Production') {
@@ -16,7 +15,7 @@ pipeline {
         }
         steps {
             echo 'Run Highstate'
-            sh("sudo ./deploy")
+            sh("sudo ./deploy.sh")
           }  
         }
       stage('Build Docs') {
@@ -37,4 +36,3 @@ pipeline {
        }
     }
 }
-
