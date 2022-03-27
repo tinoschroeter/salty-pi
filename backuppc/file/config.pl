@@ -185,7 +185,7 @@ $Conf{CmdQueueNice} = 10;
 # setting to run several BackupPC_nightly processes in parallel
 # (eg: 4, or even 8).
 #
-$Conf{MaxBackupPCNightlyJobs} = 2;
+$Conf{MaxBackupPCNightlyJobs} = 4;
 
 #
 # How many days (runs) it takes BackupPC_nightly to traverse the
