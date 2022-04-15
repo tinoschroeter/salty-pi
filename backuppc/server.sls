@@ -2,6 +2,7 @@ backuppcInstall:
   pkg.installed:
     - pkgs:
       - samba-common
+      - prometheus-node-exporter
       - samba
       - smbclient
       - libfile-rsyncp-perl
