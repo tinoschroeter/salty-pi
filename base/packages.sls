@@ -1,10 +1,10 @@
 packages:
   pkg.installed:
     - pkgs:
+        - ssh
         - htop
         - git
         - jq
-        - prometheus-node-exporter
         - vim
         - zsh
         - dstat
