@@ -4,15 +4,18 @@
 [![k3s](https://img.shields.io/badge/run%20on%20-Raspberry%20Pi-red)](https://github.com/tinoschroeter/k8s.homelab)
 ![](https://img.shields.io/github/last-commit/tinoschroeter/salty-pi.svg?style=flat)
 
+
+[![saltstack](https://img.shields.io/badge/thorstenkramm%20-gitbook%20saltstack-blue)](https://thorstenkramm.gitbook.io/saltstack/)
+
 ## install minion
 
 ```shell
 curl -L https://bootstrap.saltproject.io -o install_salt.sh
 
-# install master
+# install master + minion
 sudo sh install_salt.sh -P -M
 
-# install client 
+# install minion
 sudo sh install_salt.sh -P
 ```
 
