@@ -7,6 +7,9 @@
 
 [![saltstack](https://img.shields.io/badge/thorstenkramm%20-gitbook%20saltstack-blue)](https://thorstenkramm.gitbook.io/saltstack/)
 
+
+![](https://raw.githubusercontent.com/tinoschroeter/salty-pi/master/docs/salty.jpg)
+
 ## install minion
 
 ```shell
