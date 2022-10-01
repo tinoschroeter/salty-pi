@@ -1,6 +1,11 @@
+{% set user = salt['grains.filter_by']({
+    'Ubuntu': 'ubuntu',
+    'Debian': 'pi',
+    }, grain='os') %}
+
 authorized_keys:
   file.managed:
-    - name: /home/ubuntu/.ssh/authorized_keys
+    - name: /home/{{user}}/.ssh/authorized_keys
     - source: salt://files/ssh_keys/authorized_keys
-    - user: ubuntu
+    - user: {{user}}
     - mode: "0600"
