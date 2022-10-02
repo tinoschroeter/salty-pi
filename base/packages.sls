@@ -15,3 +15,5 @@ packages:
         - iotop
         - python3-pip
         - nfs-common
+        - prometheus-node-exporter
+        - nodejs
