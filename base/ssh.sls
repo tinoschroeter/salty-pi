@@ -5,7 +5,7 @@
 
 authorized_keys:
   file.managed:
-    - name: /home/{{user}}/.ssh/authorized_keys
+    - name: /home/{{ user }}/.ssh/authorized_keys
     - source: salt://files/ssh_keys/authorized_keys
-    - user: {{user}}
+    - user: {{ user }}
     - mode: "0600"
