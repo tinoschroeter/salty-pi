@@ -20,7 +20,7 @@ packages:
 # Don't install prometheus-node-exporter on Kubernetes hosts.
 
 {%- if not salt['file.directory_exists']('/etc/rancher/k3s') %}
-packages:
+prometheus-node-exporter:
   pkg.installed:
     - pkgs:
       - prometheus-node-exporter
