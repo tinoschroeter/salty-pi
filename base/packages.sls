@@ -15,7 +15,6 @@ packages:
         - iotop
         - python3-pip
         - nfs-common
-        - prometheus-node-exporter
         - nodejs
 
 # Don't install prometheus-node-exporter on Kubernetes hosts.
