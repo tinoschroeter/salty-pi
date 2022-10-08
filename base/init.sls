@@ -1,7 +1,7 @@
 include:
 {% if grains['osarch'] == "arm64" %}
-  - base.packages
-  - base.ssh
   - base.oh-my-zsh
+  - base.ssh
 {% endif %}
+  - base.packages
   - update
