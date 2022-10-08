@@ -484,10 +484,8 @@ $Conf{IncrPeriod} = '0.97';
 #
 #    $Conf{FullKeepCnt} = 4;
 #    $Conf{FullKeepCnt} = [4];
-#
-$Conf{FullKeepCnt} = [
-  1
-];
+ 
+$Conf{FullKeepCnt} = [4, 0, 4, 0, 0, 2];
 
 #
 # Very old full backups are removed after $Conf{FullAgeMax} days.  However,
@@ -499,7 +497,7 @@ $Conf{FullKeepCnt} = [
 # full backups to exceed $Conf{FullAgeMax}.
 #
 $Conf{FullKeepCntMin} = 1;
-$Conf{FullAgeMax} = 90;
+$Conf{FullAgeMax} = 365;
 
 #
 # Number of incremental backups to keep.  Must be >= 1.
@@ -516,7 +514,7 @@ $Conf{IncrKeepCnt} = 6;
 # matter how old they are.
 #
 $Conf{IncrKeepCntMin} = 1;
-$Conf{IncrAgeMax} = 30;
+$Conf{IncrAgeMax} = 90;
 
 #
 # Level of each incremental.  "Level" follows the terminology
@@ -860,7 +858,9 @@ $Conf{BlackoutPeriods} = [
       2,
       3,
       4,
-      5
+      5,
+      6,
+      7
     ],
     'hourBegin' => 7,
     'hourEnd' => '19.5'
