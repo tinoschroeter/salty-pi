@@ -147,14 +147,14 @@ $Conf{WakeupSchedule} = [
 # are no user backup requests then this is the maximum number
 # of simultaneous backups.
 #
-$Conf{MaxBackups} = 4;
+$Conf{MaxBackups} = 1;
 
 #
 # Additional number of simultaneous backups that users can run.
 # As many as $Conf{MaxBackups} + $Conf{MaxUserBackups} requests can
 # run at the same time.
 #
-$Conf{MaxUserBackups} = 4;
+$Conf{MaxUserBackups} = 2;
 
 #
 # Maximum number of pending link commands. New backups will only be
@@ -185,7 +185,7 @@ $Conf{CmdQueueNice} = 10;
 # setting to run several BackupPC_nightly processes in parallel
 # (eg: 4, or even 8).
 #
-$Conf{MaxBackupPCNightlyJobs} = 4;
+$Conf{MaxBackupPCNightlyJobs} = 2;
 
 #
 # How many days (runs) it takes BackupPC_nightly to traverse the
