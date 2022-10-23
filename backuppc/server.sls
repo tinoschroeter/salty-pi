@@ -1,3 +1,13 @@
+/var/lib/backuppc:
+  mount.mounted:
+    - device: UUID=4597a3ca-dbd6-4223-b6a6-c4306666554a
+    - fstype: btrfs
+    - opts: defaults
+    - dump: 0
+    - pass_num: 2
+    - persist: True
+    - mkmnt: True
+
 backuppcInstall:
   pkg.installed:
     - pkgs:
