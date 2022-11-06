@@ -778,7 +778,7 @@ $Conf{BackupFilesOnly} = ['/etc', '/srv', '/root', '/home', '/usr', '/var','/boo
 #       '*' => ['/junk', '/dont_back_this_up'], # these are for other shares
 #    };
 #
-$Conf{BackupFilesExclude} = {};
+$Conf{BackupFilesExclude} = ['/run'];
 
 #
 # PCs that are always or often on the network can be backed up after
@@ -862,8 +862,8 @@ $Conf{BlackoutPeriods} = [
       6,
       7
     ],
-    'hourBegin' => 7,
-    'hourEnd' => '19.5'
+    'hourBegin' => 23,
+    'hourEnd' => 8
   }
 ];
 
