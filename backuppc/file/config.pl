@@ -862,8 +862,8 @@ $Conf{BlackoutPeriods} = [
       6,
       7
     ],
-    'hourBegin' => 23,
-    'hourEnd' => 8
+    'hourBegin' => 1,
+    'hourEnd' => 7
   }
 ];
 
