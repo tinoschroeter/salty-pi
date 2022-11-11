@@ -778,7 +778,7 @@ $Conf{BackupFilesOnly} = ['/etc', '/srv', '/root', '/home', '/usr', '/var','/boo
 #       '*' => ['/junk', '/dont_back_this_up'], # these are for other shares
 #    };
 #
-$Conf{BackupFilesExclude} = ['/run'];
+$Conf{BackupFilesExclude} = ['/run', '/home/work', '/home/privat'];
 
 #
 # PCs that are always or often on the network can be backed up after
