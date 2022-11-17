@@ -857,13 +857,19 @@ $Conf{BlackoutPeriods} = [
       1,
       2,
       3,
-      4,
+      4
+    ],
+    'hourBegin' => 10.0,
+    'hourEnd' => 23.9
+  },
+  {
+    'weekDays' => [
       5,
       6,
       7
     ],
-    'hourBegin' => 1,
-    'hourEnd' => 7
+    'hourBegin' => 12.0,
+    'hourEnd' => 2.0
   }
 ];
 
