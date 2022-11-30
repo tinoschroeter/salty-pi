@@ -15,7 +15,6 @@ backuppcInstall:
       - prometheus-node-exporter
       - samba
       - smbclient
-      - libfile-rsyncp-perl
       - backuppc
 
 priv-key:
