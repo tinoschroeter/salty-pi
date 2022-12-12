@@ -13,9 +13,10 @@ backuppcInstall:
     - pkgs:
       - samba-common
       - prometheus-node-exporter
+      - sponge
       - samba
       - smbclient
-      - backuppc
+      #- backuppc
 
 priv-key:
   file.managed:
@@ -68,6 +69,21 @@ hosts:
     - mode: "0660"
     - require:
       - pkg: backuppcInstall
+
+backuppc_exporter:
+  file.managed:
+    - name: /opt/backuppc_exporter
+    - source: salt://backuppc/backuppc_exporter
+    - user: root
+    - group: root
+    - mode: "0760"
+    - require:
+      - pkg: backuppcInstall
+
+/opt/backuppc_exporter | sponge /var/lib/prometheus/node-exporter/backuppc.prom:
+  cron.present:
+    - user: root
+    - minute: "*/10"
 
 # https://github.com/HanGhoul/BackupPC-v3-BetterCSS
 better_css:

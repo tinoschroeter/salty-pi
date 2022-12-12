@@ -1,6 +1,9 @@
 packages:
   pkg.installed:
     - pkgs:
+{% if grains['osmajorrelease'] == "22" %}
+        - linux-modules-extra-raspi
+{% endif %}
 {% if grains['osarch'] == "arm64" %}
         - nodejs
 {% endif %}

@@ -1,3 +1,3 @@
 base:
-  '*':
-    - restic_server
+  'storage':
+    - docker

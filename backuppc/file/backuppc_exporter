@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ -f /etc/backuppc/hosts ];then
+echo "# HELP backuppc_last_age Age of most recent backup for every host, in seconds."
+echo "# TYPE backuppc_last_age gauge"
+
+for host in $(cat /etc/backuppc/hosts|grep -v '^#\|^host'|awk '{print $1}'); do
+  timeNow=$(date +%s) # Unix Timestamp
+
+  if [ -f /var/lib/backuppc/pc/"${host}"/backups ];then
+    age=$(tail -n1 /var/lib/backuppc/pc/"${host}"/backups|grep 'full\|incr'|awk '{print $3}')
+    if [ -z "$age" ]; then
+      echo "backuppc_last_age{hostname=\"${host}\"} $((timeNow - age))"
+    fi
+  fi
+done
+
+fi
+if [ -d /var/lib/backuppc ];then
+  pool_usage=$(df -h|grep '/var/lib/backuppc'|awk '{print $5}'|sed 's/%//g')
+  echo "# HELP backuppc_pool_usage BackupPC pool usage (0 to 100)"
+  echo "# TYPE backuppc_pool_usage gauge"
+  echo "backuppc_pool_usage ${pool_usage}"
+fi
