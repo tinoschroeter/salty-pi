@@ -84,6 +84,16 @@ backuppc_exporter:
     - user: root
     - minute: "*/10"
 
+hosts:
+  file.managed:
+    - name: /etc/hosts
+    - source: salt://backuppc/file/hosts
+    - user: root
+    - group: root
+    - mode: "0644"
+    - require:
+      - pkg: backuppcInstall
+
 # https://github.com/HanGhoul/BackupPC-v3-BetterCSS
 better_css:
   file.managed:
