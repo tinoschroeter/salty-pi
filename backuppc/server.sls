@@ -16,7 +16,7 @@ backuppcInstall:
       - sponge
       - samba
       - smbclient
-      #- backuppc
+      - backuppc
 
 priv-key:
   file.managed:
