@@ -13,7 +13,6 @@ backuppcInstall:
     - pkgs:
       - samba-common
       - prometheus-node-exporter
-      - sponge
       - samba
       - smbclient
       - backuppc
