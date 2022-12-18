@@ -1,3 +1,5 @@
+# Managed by saltstack
+#
 # Your system has configured 'manage_etc_hosts' as True.
 # As a result, if you wish for changes to this file to persist
 # then you will need to either

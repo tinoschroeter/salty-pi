@@ -84,7 +84,7 @@ backuppc_exporter:
     - user: root
     - minute: "*/10"
 
-hosts:
+hosts_file:
   file.managed:
     - name: /etc/hosts
     - source: salt://backuppc/file/hosts
