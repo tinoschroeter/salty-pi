@@ -1,6 +1,6 @@
 /var/lib/backuppc:
   mount.mounted:
-    - device: UUID=976dfb92-7ce9-428c-ab63-002ad1dad1f6
+    - device: UUID=55500556-51e7-43a2-ab8d-8107cc9e1d4a
     - fstype: btrfs
     - opts: defaults
     - dump: 0
