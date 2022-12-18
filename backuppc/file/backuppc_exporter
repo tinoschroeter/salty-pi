@@ -9,7 +9,7 @@ for host in $(cat /etc/backuppc/hosts|grep -v '^#\|^host'|awk '{print $1}'); do
 
   if [ -f /var/lib/backuppc/pc/"${host}"/backups ];then
     age=$(cat /var/lib/backuppc/pc/"${host}"/backups|grep 'full\|incr'|awk '{print $3}'|tail -n 1)
-    if [ -z "$age" ]; then
+    if [ ! -z "$age" ]; then
       echo "backuppc_last_age{hostname=\"${host}\"} $((timeNow - age))"
     fi
   fi
