@@ -2185,7 +2185,7 @@ $Conf{CgiImageDirURL} = '/image';
 # The previous v2.x version is available as BackupPC_stnd_orig.css, so
 # if you prefer the old skin, change this to BackupPC_stnd_orig.css.
 #
-# $Conf{CgiCSSFile} = 'BackupPC_bttr.css';
+$Conf{CgiCSSFile} = 'BackupPC_bttr.css';
 
 #
 # Whether the user is allowed to edit their per-PC config.
