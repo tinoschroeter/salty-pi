@@ -72,7 +72,7 @@ hosts:
 backuppc_exporter:
   file.managed:
     - name: /opt/backuppc_exporter
-    - source: salt://backuppc/backuppc_exporter
+    - source: salt://backuppc/file/backuppc_exporter
     - user: root
     - group: root
     - mode: "0760"
