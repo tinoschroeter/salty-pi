@@ -5,3 +5,4 @@ base:
 
   "storage":
     - backuppc.server
+    - docker

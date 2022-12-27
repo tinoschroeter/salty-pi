@@ -778,7 +778,7 @@ $Conf{BackupFilesOnly} = ['/etc', '/srv', '/root', '/home', '/usr', '/var','/boo
 #       '*' => ['/junk', '/dont_back_this_up'], # these are for other shares
 #    };
 #
-$Conf{BackupFilesExclude} = ['/run', '/home/work', '/home/privat'];
+$Conf{BackupFilesExclude} = ['/run', '/home/work', '/home/privat', '/var/lib/kubelet/pods'];
 
 #
 # PCs that are always or often on the network can be backed up after
