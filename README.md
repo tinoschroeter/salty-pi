@@ -2,13 +2,11 @@
 
 [![Build Status](https://jenkins.tino.sh/buildStatus/icon?job=salty-pi%2Fmaster)](https://jenkins.tino.sh/job/salty-pi/job/master/)
 [![k3s](https://img.shields.io/badge/run%20on%20-Raspberry%20Pi-red)](https://github.com/tinoschroeter/k8s.homelab)
-![](https://img.shields.io/github/last-commit/tinoschroeter/salty-pi.svg?style=flat)
-
+![last-commit](https://img.shields.io/github/last-commit/tinoschroeter/salty-pi.svg?style=flat)
 
 [![saltstack](https://img.shields.io/badge/thorstenkramm%20-gitbook%20saltstack-blue)](https://thorstenkramm.gitbook.io/saltstack/)
 
-
-![](https://raw.githubusercontent.com/tinoschroeter/salty-pi/master/docs/salty.jpg)
+![image](https://raw.githubusercontent.com/tinoschroeter/salty-pi/master/docs/salty.jpg)
 
 ## install minion
 
@@ -31,10 +29,11 @@ salt-key -A      # Accept all pending keys.
 ```shell
 salt '*' test.ping # test connection
 ```
-## Salt states 
 
-> default salt storage 
-/srv/salt
+## Salt states
+
+> default salt storage
+> /srv/salt
 
 ## Salt API
 
