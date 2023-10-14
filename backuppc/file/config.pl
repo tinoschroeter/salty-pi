@@ -717,7 +717,7 @@ $Conf{ArchiveInfoKeepCnt} = 10;
 #       '*' => ['/myFiles', '/important'],      # these are other shares
 #    };
 #
-$Conf{BackupFilesOnly} = ['/etc', '/srv', '/root', '/home', '/usr', '/var','/boot', '/mnt'];
+$Conf{BackupFilesOnly} = ['/etc', '/srv', '/root', '/home', '/usr', '/var','/boot', '/mnt', '/opt'];
 
 #
 # List of directories or files to exclude from the backup.  For Smb,
