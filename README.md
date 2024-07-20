@@ -1,6 +1,5 @@
 # Salty PI
 
-[![Build Status](https://jenkins.tino.sh/buildStatus/icon?job=salty-pi%2Fmaster)](https://jenkins.tino.sh/job/salty-pi/job/master/)
 [![k3s](https://img.shields.io/badge/run%20on%20-Raspberry%20Pi-red)](https://github.com/tinoschroeter/k8s.homelab)
 ![last-commit](https://img.shields.io/github/last-commit/tinoschroeter/salty-pi.svg?style=flat)
 
@@ -65,19 +64,108 @@ passwd salt-api
 
 ```shell
 curl -sS http://localhost:8000/login \
-  -H 'Accept: application/x-yaml' \
-  -d username=salt-api \
-  -d password=123ab \
-  -d eauth=pam|grep token|awk '{print $2}'>/tmp/token
+     -H 'Accept: application/x-yaml' \
+     -d username=salt-api \
+     -d password=123ab \
+     -d eauth=pam|grep token|awk '{print $2}'>/tmp/token
 ```
 
 ```shell
 curl -sSk http://localhost:8000 \
-  -H 'Accept: application/x-yaml' \
-  -H "X-Auth-Token: $(cat /tmp/token)" \
-  -d client=local \
-  -d tgt='*' \
-  -d fun=test.ping
+     -H 'Accept: application/json' \
+     -H "X-Auth-Token: $(cat /tmp/token)" \
+     -d client=wheel \
+     -d fun=key.list_all
+```
+
+```shell
+curl -sSk http://localhost:8000 \
+     -H 'Accept: application/x-yaml' \
+     -H "X-Auth-Token: $(cat /tmp/token)" \
+     -d client=local \
+     -d tgt='*' \
+     -d fun=test.ping
+```
+
+```shell
+curl -sSk http://localhost:8000 \
+     -H 'Accept: application/json' \
+     -H "X-Auth-Token: $(cat /tmp/token)" \
+     -d client=local \
+     -d tgt='*' \
+     -d fun=grains.items
+```
+
+```shell
+curl -sSk http://localhost:8000 \
+     -H 'Accept: application/json' \
+     -H "X-Auth-Token: $(cat /tmp/token)" \
+     -d client=local \
+     -d tgt='minion1' \
+     -d fun=pillar.items
+```
+
+```shell
+curl -sSk http://localhost:8000 \
+     -H 'Accept: application/json' \
+     -H "X-Auth-Token: $(cat /tmp/token)" \
+     -d client=local \
+     -d tgt='*' \
+     -d fun=state.apply
+```
+
+```shell
+curl -sSk http://localhost:8000 \
+     -H 'Accept: application/json' \
+     -H "X-Auth-Token: $(cat /tmp/token)" \
+     -d client=local -d tgt='worker-node0*' \
+     -d fun=state.apply \
+     -d '["arg=base"]'
+```
+
+```shell
+curl -sSk http://localhost:8000 \
+     -H "Accept: application/json" \
+     -H "X-Auth-Token: $(cat /tmp/token)" \
+     -d tgt='*' \
+     -d fun=test.ping \
+     -d client=local_async
+```
+
+```shell
+curl -sSk http://localhost:8000 \
+     -H 'Accept: application/json' \
+     -H "X-Auth-Token: $(cat /tmp/token)" \
+     -d client=runner \
+     -d fun=jobs.list_jobs
+```
+
+```shell
+curl -sSk http://localhost:8000/jobs/20240720124257971546
+     -H "Accept: application/json"
+     -H "X-Auth-Token: $(cat /tmp/token)"
+```
+
+```shell
+curl -sSk http://localhost:8000/keys \
+     -H 'Accept: application/x-yaml' \
+     -H "X-Auth-Token: $(cat /tmp/token)"
+```
+
+```shell
+curl -sSk http://localhost:8000 \
+     -H 'Accept: application/json' \
+     -H "X-Auth-Token: $(cat /tmp/token)" \
+     -d client=runner \
+     -d fun=jobs.list_jobs
+```
+
+```shell
+curl -sSk http://localhost:8000 \
+     -H 'Accept: application/json' \
+     -H "X-Auth-Token: $(cat /tmp/token)" \
+     -d client=runner \
+     -d fun=manage.status
 ```
 
 ```shell
